@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import BaseUploader from "./components/BaseUploader";
 
 function App() {
+  const uploaderConfig = {
+    uploadParts: 6,
+    showPreview: true, // not bound to anything right now
+    uploaderType: "dnd", // TODO: use this as enum while using typescript
+  };
+
+  const handleImageUploadEvent = (response) => {
+    // code to process uploaded images
+    console.log(response);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BaseUploader config={uploaderConfig} onUpload={handleImageUploadEvent} />
     </div>
   );
 }
