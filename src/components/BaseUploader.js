@@ -4,8 +4,8 @@ import ImageUploader from "./ImageUploader";
 const styles = {
   container: {
     display: "grid",
-    gridTemplateColumns: "repeat(3,500px)",
-    gridGap: 10,
+    gridTemplateColumns: "repeat(3,400px)",
+    gridGap: 1,
   },
 };
 
@@ -28,7 +28,6 @@ const BaseUploader = ({ config, onUpload }) => {
     <div style={styles.container}>
       {imageData.map((item, index) => (
         <ImageUploader
-          uploaderType={config.uploaderType}
           key={index}
           onImageUploaded={(response) => handleSingleUpload(response, index)}
         />
