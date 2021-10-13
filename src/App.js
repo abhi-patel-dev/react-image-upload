@@ -1,10 +1,10 @@
 import BaseUploader from "./components/BaseUploader";
+import './App.css';
 
 function App() {
   const uploaderConfig = {
     uploadParts: 6,
-    showPreview: true, // not bound to anything right now
-    uploaderType: "dnd", // TODO: use this as enum while using typescript
+    showPreview: true // TODO: use this as enum while using typescript
   };
 
   const handleImageUploadEvent = (response) => {
