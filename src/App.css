@@ -6,6 +6,27 @@
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: #171717;
   font-weight: 100;
+  background-color: transparent;
+}
+
+.btn-primary {
+ background-color: #171717;
+}
+
+.btn-danger {
+  background-color: #ff2400;
+}
+
+.btn-outline {
+  background-color: none;
+  border: 0.5px solid;
+}
+
+.border-red {
+  border-color: red;
+}
+
+.container {
+  padding: 1.3em;
 }

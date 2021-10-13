@@ -13,7 +13,8 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
+      <h2>Image Uploader </h2>
       <BaseUploader config={uploaderConfig} onUpload={handleImageUploadEvent} />
     </div>
   );

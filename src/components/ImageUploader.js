@@ -10,17 +10,9 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
   },
-  header: {
-    // background:'red'
-  },
   parentSize: {
     width: "100%",
     height: "100%",
-  },
-  preview: {},
-  details: {
-    padding: "5px",
-    background: "red",
   },
 };
 
@@ -63,6 +55,13 @@ const ImageUploader = ({ onImageUploaded }) => {
     e.stopPropagation();
   };
 
+
+  const resetComponent = () => {
+    setDetailsExpanded(false);
+    setImageData(null);
+    setImageUploaded(false);
+  }
+
   return (
     <div
       style={styles.container}
@@ -82,7 +81,7 @@ const ImageUploader = ({ onImageUploaded }) => {
             <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
           </svg>
           <p>Drag your image here</p>
-          <button onClick={handleChooseFile} className="btn">
+          <button onClick={handleChooseFile} className="btn btn-primary">
             Choose File
           </button>
           <input
@@ -115,7 +114,7 @@ const ImageUploader = ({ onImageUploaded }) => {
               background: "rgba(0,0,0,0.8)",
               zIndex: 100,
               bottom: 0,
-              top: !detailsExpanded ? "85%" : "50%",
+              top: !detailsExpanded ? "85%" : "30%",
               ...styles.parentSize,
               color: "whitesmoke",
               transition: "top 200ms",
@@ -171,6 +170,7 @@ const ImageUploader = ({ onImageUploaded }) => {
               <p><strong>Name:</strong> {imageData.fileName}</p>
               <p><strong>Size:</strong> {imageData.fileSize}</p>
               <p><strong>Last Modified:</strong> {new Date(imageData.lastModifiedAt).toLocaleDateString()}</p>
+              <button className="btn btn-danger" onClick={resetComponent}>Remove</button>
             </div>
           </div>
         </div>
