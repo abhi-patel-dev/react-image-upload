@@ -45,6 +45,7 @@ const ImageUploader = ({ onImageUploaded }) => {
   };
 
   const handleDropEvent = (e) => {
+    console.log(e);
     e.preventDefault();
     e.stopPropagation();
     handleFileChange(e.dataTransfer.files);
@@ -86,6 +87,7 @@ const ImageUploader = ({ onImageUploaded }) => {
           </button>
           <input
             ref={fileInputRef}
+            accept="image/*"
             type="file"
             style={{ display: "none" }}
             onInput={(e) => handleFileChange(e.target.files)}
